@@ -28,12 +28,3 @@ class ColorPair:
         except ValueError:
             raise Exception('Minor index out of range')
         return major_index * len(ColorPair.MINOR_COLORS) + minor_index + 1
-
-
-    def generate_reference_manual():
-        manual = []
-        for major in ColorPair.MAJOR_COLORS:
-            for minor in ColorPair.MINOR_COLORS:
-                pair_number = ColorPair.get_pair_number_from_color(major, minor)
-                manual.append(f'{pair_number}: {major} - {minor}')
-        return '\n'.join(manual)
